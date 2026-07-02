@@ -1,0 +1,23 @@
+# Dataset and output files
+candidates.jsonl
+sample_candidates.json
+submission.csv
+
+# Pre-computed artifacts
+artifacts/
+
+# Python cache and environment files
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS generated files
+.DS_Store
+Thumbs.db
