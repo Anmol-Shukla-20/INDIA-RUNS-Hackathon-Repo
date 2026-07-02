@@ -1,0 +1,68 @@
+# Redrob Hackathon — Submission Metadata Template
+
+# ============================================================================
+# Team identity
+# ============================================================================
+team_name: "THE_NEXT_GEN_DEVELOPERS"  # Used in leaderboard and announcements
+
+primary_contact:
+  name: "Anmol Shukla"
+  email: "shuklaanmol811@gmail.com"   # Used for all organizer communication
+  phone: "+91-9453846142"        # Used for top-50 / top-10 outreach
+
+team_members:
+  - name: "Anmol Shukla"
+    email: "shuklaanmol811@gmail.com"
+    role: "Team Lead"          
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+github_repo: "https://github.com/INDIA-RUNS-Hackathon-Repo"
+
+sandbox_link: "https://colab.research.google.com/drive/YOUR_COLAB_ID_HERE"
+# Make sure to replace YOUR_COLAB_ID_HERE with your actual public Colab link.
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+# The single command that produces submission.csv from candidates.jsonl.
+# Should run end-to-end within 5 minutes on CPU with 16GB RAM and no network.
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+compute:
+  platform: "Google Colab (Free Tier CPU)"      # Or: "AWS EC2 c5.4xlarge", "Local Linux box", etc.
+  cpu_cores: 2                                  # Number of CPU cores used
+  ram_gb: 16                                    # Available RAM in GB
+  python_version: "3.10"                        # python --version
+  os: "Ubuntu 22.04 LTS"                        # Or "Ubuntu 22.04 LTS", etc.
+  uses_gpu_for_inference: false                 # Must be false — see compute constraints
+  has_network_during_ranking: false             # Must be false — no API calls during ranking
+  pre_computation_required: true                # true if you pre-compute embeddings or train models offline
+  pre_computation_time_minutes: 2               # Approximate, if applicable
+
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+
+ai_tools_used:
+  - "Google Antigravity"        # for architecture discussion, code review
+  - "Gemini"  # e.g. for ppt making.
+
+ai_usage_summary: |
+  Used Google Antigravity as an AI pair-programmer to assist with the architecture design, codebase development, and debugging. Used Gemini to help structure the presentation materials and documentation. No proprietary candidate data was fed into external LLMs.
+# ============================================================================
+
+# Approach summary (optional but recommended)
+# ============================================================================
+methodology_summary: |
+  A two-stage system designed for extreme CPU efficiency. Stage 1 (offline) parses candidates, explicitly filters honeypots, and builds a lightweight TF-IDF matrix for semantic matching. Stage 2 (online, <5min) uses a custom heuristic scoring algorithm that merges TF-IDF cosine similarity with behavioral signals (rewarding high recruiter response rates and GitHub activity, while penalizing long notice periods). The top 100 candidates are then processed by a quantized, CPU-optimized local LLM (Qwen1.5-0.5B-Chat) to generate deterministic, hallucination-free reasonings entirely within the 16GB memory constraint.
+
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true        # I have read submission_spec.md in full
+  code_is_original_work: true       # My code is my team's original work (using AI as a tool is fine)
+  no_collusion: true                # I have not coordinated my submission with other teams
+  honeypot_check_done: true         # OPTIONAL — set true if you explicitly checked for honeypots in your ranking
+  reproduction_tested: true         # I have tested that my reproduce_command runs end-to-end
