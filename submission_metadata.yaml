@@ -20,7 +20,7 @@ team_members:
 # ============================================================================
 github_repo: "https://github.com/INDIA-RUNS-Hackathon-Repo"
 
-sandbox_link: "https://colab.research.google.com/drive/YOUR_COLAB_ID_HERE"
+sandbox_link: "https://colab.research.google.com/drive/1ALMkPjBq_azJpQaHrkRngpGG14DYdy0t?usp=sharing"
 # Make sure to replace YOUR_COLAB_ID_HERE with your actual public Colab link.
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 # The single command that produces submission.csv from candidates.jsonl.
@@ -30,15 +30,15 @@ reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submi
 # Compute environment
 # ============================================================================
 compute:
-  platform: "Google Colab (Free Tier CPU)"      # Or: "AWS EC2 c5.4xlarge", "Local Linux box", etc.
+  platform: "Google Colab (Free Tier CPU)"     
   cpu_cores: 2                                  # Number of CPU cores used
   ram_gb: 16                                    # Available RAM in GB
-  python_version: "3.10"                        # python --version
-  os: "Ubuntu 22.04 LTS"                        # Or "Ubuntu 22.04 LTS", etc.
-  uses_gpu_for_inference: false                 # Must be false — see compute constraints
-  has_network_during_ranking: false             # Must be false — no API calls during ranking
-  pre_computation_required: true                # true if you pre-compute embeddings or train models offline
-  pre_computation_time_minutes: 2               # Approximate, if applicable
+  python_version: "3.10"                        
+  os: "Ubuntu 22.04 LTS"                        
+  uses_gpu_for_inference: false                 
+  has_network_during_ranking: false             
+  pre_computation_required: true                
+  pre_computation_time_minutes: 2               
 
 # ============================================================================
 # AI tools declaration
