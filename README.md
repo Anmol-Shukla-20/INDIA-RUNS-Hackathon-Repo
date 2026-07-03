@@ -37,7 +37,7 @@ python src/rank.py
 *This will output `submission.csv`.*
 
 ## Google colab Notebook Link:
-here is the link of the Notebook:
+here is the link of the Notebook: https://colab.research.google.com/drive/1ALMkPjBq_azJpQaHrkRngpGG14DYdy0t?usp=sharing
 
 ## Evaluating
 You can run the official validator on the output:
